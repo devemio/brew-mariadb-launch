@@ -9,7 +9,7 @@ echo -e "${BROWN}Starting MariaDB...${NC}"
 
 if ps aux | grep 'mysql' | egrep -qv 'grep|bash'
 then
-    echo -e "🔥 ${GREEN}Running${NC}"
+    echo -e "🔥 ${GREEN}Already running${NC}"
 else
     read OUTPUT <<< $(mysql.server start | tail -1)
     if [ $OUTPUT == "SUCCESS!" ]
